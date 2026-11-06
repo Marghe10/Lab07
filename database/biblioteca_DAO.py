@@ -13,12 +13,13 @@ class BibliotecaDAO:
     def get_biblioteca(self):
         connessione = DBConnect()
         cnx = connessione.get_connection()
-        query = """SELECT * FROM Libro"""
-        cursore=cnx.cursor()
+        cursore = cnx.cursor(dictionary=True)
+        query = """SELECT nome, indirizzo
+                   FROM biblioteca
+                   ORDER BY nome"""
         cursore.execute(query)
-        for libro in cursore:
-            print(libro)
+        risultato = cursore.fetchall()
         cursore.close()
         cnx.close()
-
+        return risultato
     # TODO

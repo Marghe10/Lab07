@@ -8,15 +8,18 @@ from model.libro_DTO import Libro
 
 class LibroDAO:
     def __init__(self):
+        pass
+
+    def get_generi(self):
         connessione=DBConnect()
         cnx=connessione.get_connection()
-        query="""SELECT * FROM Libro"""
-        cursore=cnx.cursor()
+        cursore = cnx.cursor(dictionary=True)
+        query="""SELECT * FROM libro"""
         cursore.execute(query)
-        for libro in cursore:
-            print(libro)
+        risultato = cursore.fetchall()
         cursore.close()
         cnx.close()
+        return risultato
     # TODO
 
     #deve restituirmi una lista coi libri presenti nel database

@@ -19,25 +19,9 @@ class Controller:
 
     # POPOLA DROPDOWN
     # TODO
-    def popola_biblioteche(self, biblioteche):
-        # Svuoto le vecchie opzioni, per evitare duplicati.
-        dropdown = self._view.biblioteca_dropdown
-        dropdown= dropdown.options.clear()
+    def handler_dropdown(self):
+        libri_filtrati=self._model.get_libri_filtrati()
 
-        # Inserisco l'opzione iniziale.
-        self._view.biblioteca_dropdown.options.append(ft.dropdown.Option(key="nessun_filtro",text="Nessun filtro"))
-
-        # Inserisco le biblioteche ricevute.
-        for nome in biblioteche:
-            dropdown.options.append(ft.dropdown.Option(key=nome, text=nome))
-
-        dropdown.value = "nessun_filtro"
-        dropdown.update()
-
-
-        def carica_biblioteche(self):
-            biblioteche_complete = self._model.get_biblioteche()
-            self.popola_biblioteche(biblioteche_complete)
 
 
     # CALLBACKS DROPDOWN
@@ -45,3 +29,5 @@ class Controller:
 
     # AZIONE: MOSTRA LIBRI
     # TODO
+
+

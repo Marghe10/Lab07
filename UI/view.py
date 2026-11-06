@@ -1,6 +1,7 @@
 import flet as ft
 from UI.alert import AlertManager
 
+
 '''
     VIEW:
     - Rappresenta l'interfaccia utente
@@ -36,11 +37,8 @@ class View:
         self.txt_titolo = ft.Text(value="Biblioteche di Torino", size=38, weight=ft.FontWeight.BOLD)
 
         # --- Sezione 2: Filtraggio ---
-        self.biblioteca_dropdown = ft.Dropdown(label="Biblioteca", width=300, options=[])
+        self.biblioteca_dropdown = ft.Dropdown(label="Biblioteche", width=300, options=[], on_select=self.controller.handler_dropdown)
 
-
-
-        # TODO
 
         # Sezione 3: Libri
         # TODO
