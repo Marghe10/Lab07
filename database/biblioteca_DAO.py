@@ -10,4 +10,15 @@ class BibliotecaDAO:
     def __init__(self):
         pass
 
+    def get_biblioteca(self):
+        connessione = DBConnect()
+        cnx = connessione.get_connection()
+        query = """SELECT * FROM Libro"""
+        cursore=cnx.cursor()
+        cursore.execute(query)
+        for libro in cursore:
+            print(libro)
+        cursore.close()
+        cnx.close()
+
     # TODO

@@ -1,3 +1,4 @@
+import database
 from database.biblioteca_DAO import BibliotecaDAO
 from database.libro_DAO import LibroDAO
 
@@ -16,6 +17,9 @@ class Model:
     # --- LIBRI ---
     def get_libri_filtrati(self, biblioteca:str, genere:str):
         """Restituisce la lista di tutti i libri filtrati per biblioteca e/o genere (filtri opzionali)."""
+        lista_libri=database.libro_DAO.LibroDAO()
+
+        return lista_libri
         # TODO
 
     def get_generi(self):
@@ -25,4 +29,6 @@ class Model:
     # --- BIBLIOTECHE ---
     def get_biblioteche(self):
         """ Restituisce la lista di tutte le biblioteche."""
+        return self._biblioteca_dao
+
         # TODO

@@ -8,6 +8,15 @@ from model.libro_DTO import Libro
 
 class LibroDAO:
     def __init__(self):
-        pass
-
+        connessione=DBConnect()
+        cnx=connessione.get_connection()
+        query="""SELECT * FROM Libro"""
+        cursore=cnx.cursor()
+        cursore.execute(query)
+        for libro in cursore:
+            print(libro)
+        cursore.close()
+        cnx.close()
     # TODO
+
+    #deve restituirmi una lista coi libri presenti nel database
