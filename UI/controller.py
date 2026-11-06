@@ -20,8 +20,18 @@ class Controller:
     # POPOLA DROPDOWN
     # TODO
     def handler_dropdown(self):
-        libri_filtrati=self._model.get_libri_filtrati()
+        biblioteche=self._model.get_biblioteche()
+        self._view.biblioteca_dropdown.options.clear()
+        self._view.biblioteca_dropdown.value = None
 
+        for biblioteca in biblioteche:
+            opzione = ft.DropdownOption(
+                key=str(biblioteca.id),
+                text=f"{biblioteca.nome} - {biblioteca.indirizzo}")
+
+            self._view.biblioteca_dropdown.options.append(opzione)
+
+        self._view.biblioteca_dropdown.update()
 
 
     # CALLBACKS DROPDOWN

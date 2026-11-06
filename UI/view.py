@@ -37,8 +37,8 @@ class View:
         self.txt_titolo = ft.Text(value="Biblioteche di Torino", size=38, weight=ft.FontWeight.BOLD)
 
         # --- Sezione 2: Filtraggio ---
-        self.biblioteca_dropdown = ft.Dropdown(label="Biblioteche", width=300, options=[], on_select=self.controller.handler_dropdown)
-
+        self.biblioteca_dropdown = ft.Dropdown(label="Biblioteche", width=300, options=[])
+        self.controller.handler_dropdown()
 
         # Sezione 3: Libri
         # TODO

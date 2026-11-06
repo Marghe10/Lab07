@@ -21,7 +21,7 @@ class Model:
 
         if genere is not None:
             libri = []
-            for libro in libri
+            for libro in libri:
                 if libro["genere"] == genere:
                     libri.append(libro)
 
@@ -44,6 +44,11 @@ class Model:
     # --- BIBLIOTECHE ---
     def get_biblioteche(self):
         """ Restituisce la lista di tutte le biblioteche."""
-        return self._biblioteca_dao.get_biblioteca()
+        biblioteche=self._biblioteca_dao.get_biblioteca()
+        lista_biblioteche=[]
+        for biblioteca in biblioteche:
+            lista_biblioteche.append(biblioteca)
+
+        return lista_biblioteche
 
         # TODO

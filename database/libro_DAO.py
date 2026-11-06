@@ -10,7 +10,7 @@ class LibroDAO:
     def __init__(self):
         pass
 
-    def get_generi(self):
+    def get_libri(self):
         connessione=DBConnect()
         cnx=connessione.get_connection()
         cursore = cnx.cursor(dictionary=True)

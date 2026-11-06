@@ -11,7 +11,7 @@ class BibliotecaDAO:
         pass
 
     def get_biblioteca(self):
-        connessione = DBConnect()
+        connessione = DBConnect.get_connection()
         cnx = connessione.get_connection()
         cursore = cnx.cursor(dictionary=True)
         query = """SELECT nome, indirizzo
