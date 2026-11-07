@@ -68,13 +68,6 @@ class LibroDAO:
                     AND l.genere = COALESCE(%s, l.genere)
                     ORDER BY l.titolo"""
 
-           # query = """
-           #     SELECT l.*
-           #     FROM libro AS l, biblioteca AS b
-           #     WHERE l.id_biblioteca = b.id_biblioteca
-           #     AND b.id_biblioteca = ()
-           # """
-
             cursor.execute(query, (biblioteca, genere))
 
             libri_filtrati = []
