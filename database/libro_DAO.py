@@ -10,6 +10,7 @@ class LibroDAO:
     def __init__(self):
         pass
 
+    # (TODO)
     def get_libri(self): # aggiunta io
         cnx = DBConnect.get_connection()
         try:
@@ -89,11 +90,4 @@ class LibroDAO:
                 cursor.close()
                 cnx.close()
 
-
-
-
-
-
-
-        #TODO
     #deve restituirmi una lista coi libri presenti nel database
